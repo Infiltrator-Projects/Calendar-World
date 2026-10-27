@@ -1,0 +1,362 @@
+{
+  "kind": "calendar",
+  "id": "world",
+  "name": "World Calendar",
+  "repository": "Calendar-World",
+  "defines": {
+    "INFILTRATR_TEMPORAL_DISPLAY_NAME": "\"World Calendar\"",
+    "RESOURCE_WORLD": "1",
+    "RESOURCE_FAMILY_CUSTOM": "1",
+    "RESOURCE_SINGLE_CUSTOM": "1"
+  },
+  "mode": "CALENDAR_CALENDAR_MODE_WORLD",
+  "entry": "resources/temporal/src/calendars/native-calendar.c",
+  "family": "CUSTOM",
+  "build_dependencies": [
+    "glib-2.0"
+  ],
+  "upstream_repository": "Infiltrator-Projects/Libraries",
+  "upstream_revision": "8d60662114e3052380f6f88ad3cacd9732ae7131",
+  "upstream_version": "1.19.78",
+  "source_copy_only": true,
+  "common_modified": false,
+  "files": [
+    {
+      "path": "include/infiltratr/arithmetic.h",
+      "source_path": "include/infiltratr/arithmetic.h",
+      "source_sha256": "2996d929aa5773100d900082c913eca2ed4cbb4e861489a4072e26cecabda755",
+      "copied_sha256": "2996d929aa5773100d900082c913eca2ed4cbb4e861489a4072e26cecabda755",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/config.h",
+      "source_path": "include/infiltratr/config.h",
+      "source_sha256": "04000be4c547669653fb8658472d49caacc42040fac33d0718afd19d0dafc589",
+      "copied_sha256": "04000be4c547669653fb8658472d49caacc42040fac33d0718afd19d0dafc589",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/core.h",
+      "source_path": "include/infiltratr/core.h",
+      "source_sha256": "597cbae9f966d8bb59d0ed7afa969d331d6f9140e06b748c53b5793ab2804ba0",
+      "copied_sha256": "597cbae9f966d8bb59d0ed7afa969d331d6f9140e06b748c53b5793ab2804ba0",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/format.h",
+      "source_path": "include/infiltratr/format.h",
+      "source_sha256": "c43c73ac5fc38ee1e5fa3d4b01acace433b6616f2c1e326fc00a6d62c1f94cc3",
+      "copied_sha256": "c43c73ac5fc38ee1e5fa3d4b01acace433b6616f2c1e326fc00a6d62c1f94cc3",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/temporal.h",
+      "source_path": "include/infiltratr/temporal.h",
+      "source_sha256": "bf212e14f7c553ce7b6f36c552ab696dcdedeebed3a61fe34b45b39881e3f539",
+      "copied_sha256": "bf212e14f7c553ce7b6f36c552ab696dcdedeebed3a61fe34b45b39881e3f539",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/temporal_calendar.h",
+      "source_path": "include/infiltratr/temporal_calendar.h",
+      "source_sha256": "945ad244cdbc86cd563d9343e2f9fb1c32520f76f9aa85b88634138fccafdc3a",
+      "copied_sha256": "945ad244cdbc86cd563d9343e2f9fb1c32520f76f9aa85b88634138fccafdc3a",
+      "selected_definitions": [
+        "INFILTRATR_TEMPORAL_CALENDAR_PROVIDER_ABI"
+      ]
+    },
+    {
+      "path": "include/infiltratr/temporal_id.h",
+      "source_path": "include/infiltratr/temporal_id.h",
+      "source_sha256": "de7b35addae159fcde873990908e32c1a8e040b6cdaee2a041bda5b6ea6e8bd0",
+      "copied_sha256": "de7b35addae159fcde873990908e32c1a8e040b6cdaee2a041bda5b6ea6e8bd0",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/temporal_resource.h",
+      "source_path": "include/infiltratr/temporal_resource.h",
+      "source_sha256": "7ce225d7b2c6721b7d56fc152f68c4c680f6a7d068db26a5942fe2f3b583512d",
+      "copied_sha256": "7ce225d7b2c6721b7d56fc152f68c4c680f6a7d068db26a5942fe2f3b583512d",
+      "selected_definitions": []
+    },
+    {
+      "path": "include/infiltratr/temporal_runtime.h",
+      "source_path": "include/infiltratr/temporal_runtime.h",
+      "source_sha256": "6b5c52a266b53b5ceaafe048532c282a7e96fe64c3a1381a13c35c161629ba67",
+      "copied_sha256": "6b5c52a266b53b5ceaafe048532c282a7e96fe64c3a1381a13c35c161629ba67",
+      "selected_definitions": [
+        "INFILTRATR_TEMPORAL_RESOURCE_METADATA_ABI"
+      ]
+    },
+    {
+      "path": "include/infiltratr/timing.h",
+      "source_path": "include/infiltratr/timing.h",
+      "source_sha256": "896f287ea9b03b30f7a995be3442bc020a6cccff8a5ba9a98390aa48e428642b",
+      "copied_sha256": "896f287ea9b03b30f7a995be3442bc020a6cccff8a5ba9a98390aa48e428642b",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/catalogue.h",
+      "source_path": "resources/temporal/src/calendars/catalogue.h",
+      "source_sha256": "9ec47966ec7637ada4650cc96c51b17ec791d4758a91fc3fbe935f2947cd7f57",
+      "copied_sha256": "1def7febe43a0477403281b7e38a0d85efa87f3c0f31dd4ed124cffebcfc8649",
+      "selected_definitions": [
+        "RESOURCE_ID",
+        "RESOURCE_KEYWORD",
+        "RESOURCE_MODE"
+      ]
+    },
+    {
+      "path": "src/calendars/engine/calendar-ancient.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-ancient.h",
+      "source_sha256": "45f67cd478310fa156d7086a114c961ca1e6317ca5af6c48815134bb5275ac27",
+      "copied_sha256": "45f67cd478310fa156d7086a114c961ca1e6317ca5af6c48815134bb5275ac27",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-arithmetic.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-arithmetic.h",
+      "source_sha256": "6224fee66f991c5ed47960d52a2dcebb66225b21f66a85786ba50196405e8a6c",
+      "copied_sha256": "6224fee66f991c5ed47960d52a2dcebb66225b21f66a85786ba50196405e8a6c",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-bahai.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-bahai.h",
+      "source_sha256": "998b98ca8e3cec756d0eff6ba17e17b5517d3905111bfa4868b819be2620432c",
+      "copied_sha256": "998b98ca8e3cec756d0eff6ba17e17b5517d3905111bfa4868b819be2620432c",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-custom.c",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-custom.c",
+      "source_sha256": "ae44cf27dde6b67f3dd298d46dd11854d748d618ae2bcccdfd97776e9b7e1885",
+      "copied_sha256": "e3f3b9d265e7a294835817af710e2148308f4e54e6fe3994d132feaab1820719",
+      "selected_definitions": [
+        "calendar_custom_add_months",
+        "calendar_custom_add_years",
+        "calendar_custom_fields_from_jdn",
+        "calendar_custom_format",
+        "calendar_custom_month_start",
+        "common_months",
+        "custom_provider",
+        "custom_providers",
+        "default_month_from_period",
+        "default_period_index",
+        "floor_divide",
+        "format_world",
+        "positive_modulo",
+        "world_month_length"
+      ]
+    },
+    {
+      "path": "src/calendars/engine/calendar-custom.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-custom.h",
+      "source_sha256": "5f16ffa8cc349c9d332913e2c38dc7e52e971052751b87d948411a3099fd8710",
+      "copied_sha256": "5f16ffa8cc349c9d332913e2c38dc7e52e971052751b87d948411a3099fd8710",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-engine-types.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-engine-types.h",
+      "source_sha256": "41239f68f166cdd629df0af40a8cf20c4217d59c23d6cf1e3fdb24371b5d790a",
+      "copied_sha256": "a7191b99154c5f364c8adbf349887d236d1bc37470074b66bf40b2af9d93f349",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-helpers.c",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-helpers.c",
+      "source_sha256": "2dda075098c9ba65c0896d7c3d02b69d99f7d178c568259244592e9e957309c2",
+      "copied_sha256": "af5a0c8c1a00e216fd7d2a2f01a5f140fcded42ba25dade0df5bd7b8a6a21928",
+      "selected_definitions": [
+        "calendar_format_named_date"
+      ]
+    },
+    {
+      "path": "src/calendars/engine/calendar-helpers.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-helpers.h",
+      "source_sha256": "7015087df0d942fd80a9a7efd5a55b07e8f573159333c6762b1ba740ff8afccb",
+      "copied_sha256": "7015087df0d942fd80a9a7efd5a55b07e8f573159333c6762b1ba740ff8afccb",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-historical.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-historical.h",
+      "source_sha256": "b9bc8f93ab33dfe0e2162a04088ff064e04099a92fbdcbecf169035e057a456e",
+      "copied_sha256": "b9bc8f93ab33dfe0e2162a04088ff064e04099a92fbdcbecf169035e057a456e",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-perpetual.c",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-perpetual.c",
+      "source_sha256": "37d570ed2f6fe4d0fe4d48bd4038ff095c0f52b564241ae06b439186da8bc8ce",
+      "copied_sha256": "9d3aedf1e55d69a979e43d281fcdd193dabb27aa92c35c69518d53c92820e31e",
+      "selected_definitions": [
+        "calendar_world_fields_from_jdn",
+        "calendar_world_fields_to_jdn",
+        "calendar_world_month_length",
+        "gregorian_day_of_year",
+        "gregorian_is_leap",
+        "gregorian_to_jdn",
+        "jdn_to_gregorian",
+        "world_base_lengths"
+      ]
+    },
+    {
+      "path": "src/calendars/engine/calendar-perpetual.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-perpetual.h",
+      "source_sha256": "e073ea2e2c03bc4c5772e1053b1cf05ad1d0f3a323eb20d4e913193c67a87f52",
+      "copied_sha256": "e073ea2e2c03bc4c5772e1053b1cf05ad1d0f3a323eb20d4e913193c67a87f52",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-reform.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-reform.h",
+      "source_sha256": "e44c1d70b0595672bf17361f953f1d1dce68170dc23acea1130f7a6a1f617db0",
+      "copied_sha256": "e44c1d70b0595672bf17361f953f1d1dce68170dc23acea1130f7a6a1f617db0",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/calendar-swedish.h",
+      "source_path": "resources/temporal/src/calendars/engine/calendar-swedish.h",
+      "source_sha256": "33d2214c5bb620a5017aed646bc89b7c07a4a5d1a2218e77d8e57b969b80d3d1",
+      "copied_sha256": "33d2214c5bb620a5017aed646bc89b7c07a4a5d1a2218e77d8e57b969b80d3d1",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/calendars/engine/icu-calendar.h",
+      "source_path": "resources/temporal/src/calendars/engine/icu-calendar.h",
+      "source_sha256": "70db993a445e6521412efae706a76b480d01ed0a9f9d7cb328ad7737464dab0c",
+      "copied_sha256": "70db993a445e6521412efae706a76b480d01ed0a9f9d7cb328ad7737464dab0c",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/provider.c",
+      "source_path": "resources/temporal/src/calendars/native-calendar.c",
+      "source_sha256": "51c2e0ed1cca19eafd3c35652bd1ebb24716f253f4c65041280a3a32f06ab3f9",
+      "copied_sha256": "5aea2107fd78692b6b9a685fb23480d631cf54d62a7553e883d955df34023ba1",
+      "selected_definitions": [
+        "RESOURCE_EXPORT",
+        "RESOURCE_OPERATIONS",
+        "custom_add_periods",
+        "custom_add_years",
+        "custom_fields",
+        "custom_format",
+        "custom_period_start",
+        "fields",
+        "format",
+        "infiltratr_temporal_calendar_provider_v1",
+        "infiltratr_temporal_resource_metadata_v1",
+        "metadata",
+        "native",
+        "navigate",
+        "periods",
+        "provider",
+        "start",
+        "years"
+      ]
+    },
+    {
+      "path": "src/support/calendar-types.h",
+      "source_path": "resources/temporal/src/support/calendar-types.h",
+      "source_sha256": "fa402f455f64e0e623186b12a2a2536ee24850b5adb1e7627f4800627f32ead9",
+      "copied_sha256": "fa402f455f64e0e623186b12a2a2536ee24850b5adb1e7627f4800627f32ead9",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/support/integer-math.h",
+      "source_path": "resources/temporal/src/support/integer-math.h",
+      "source_sha256": "c0f9b6d7fa563af8bdb9bab4178ab7d1553852912bd41129ec86d0129841e2e8",
+      "copied_sha256": "c0f9b6d7fa563af8bdb9bab4178ab7d1553852912bd41129ec86d0129841e2e8",
+      "selected_definitions": [
+        "calendar_floor_divide",
+        "calendar_i64_add_saturating",
+        "calendar_i64_multiply_saturating",
+        "calendar_positive_modulo"
+      ]
+    },
+    {
+      "path": "src/support/julian-day.c",
+      "source_path": "resources/temporal/src/support/julian-day.c",
+      "source_sha256": "832024153d827129573b6a4f80bcb863086a38587e9bb14ad8f26a0e600d7da9",
+      "copied_sha256": "4d538c1a1cc0743f8c2f245112beaa4f70395374473e85486632ba4b74909469",
+      "selected_definitions": [
+        "calendar_gregorian_day_of_year",
+        "calendar_gregorian_is_leap",
+        "calendar_gregorian_to_jdn",
+        "calendar_jdn_to_gregorian"
+      ]
+    },
+    {
+      "path": "src/support/julian-day.h",
+      "source_path": "resources/temporal/src/support/julian-day.h",
+      "source_sha256": "9afe6171e899f90ce8abe36aff9b2443758464e4fb6664bdc61816d9afd23d11",
+      "copied_sha256": "9afe6171e899f90ce8abe36aff9b2443758464e4fb6664bdc61816d9afd23d11",
+      "selected_definitions": [
+        "CALENDAR_UNIX_EPOCH_JDN",
+        "calendar_gregorian_jdn_representable"
+      ]
+    },
+    {
+      "path": "src/support/resource-types.h",
+      "source_path": "resources/temporal/src/support/resource-types.h",
+      "source_sha256": "001bfb36714feb3b4ac01776c538662c215474cbd2007020a1b2045b49ee900b",
+      "copied_sha256": "001bfb36714feb3b4ac01776c538662c215474cbd2007020a1b2045b49ee900b",
+      "selected_definitions": []
+    },
+    {
+      "path": "src/arithmetic.c",
+      "source_path": "src/arithmetic.c",
+      "source_sha256": "091424ec46debe738acee7ac700ea2026ea108598807f04ae0282d4cd3d7cab9",
+      "copied_sha256": "328e2b0bbdc637d937e106fde695dee3e82577f46eebf0d322d51e5437f66bab",
+      "selected_definitions": [
+        "infiltratr_i64_add_checked",
+        "infiltratr_i64_add_saturating",
+        "infiltratr_i64_floor_divmod",
+        "infiltratr_i64_multiply_checked",
+        "infiltratr_i64_multiply_saturating",
+        "infiltratr_i64_subtract_saturating"
+      ]
+    },
+    {
+      "path": "src/temporal.c",
+      "source_path": "src/temporal.c",
+      "source_sha256": "434ef54e0e09469a6f6075dabb2b4cb21d8d1f218fd0a603443368f1f81609a1",
+      "copied_sha256": "89dd83892e4d40445da99945f4a6108721f93b709ee63f62c2b3962f29cc1436",
+      "selected_definitions": [
+        "infiltratr_temporal_gregorian_day_of_year",
+        "infiltratr_temporal_gregorian_is_leap",
+        "infiltratr_temporal_gregorian_to_jdn",
+        "infiltratr_temporal_jdn_to_gregorian",
+        "temporal_coordinate_floor",
+        "temporal_coordinate_modulo"
+      ]
+    },
+    {
+      "path": "exports.map",
+      "source_path": "resources/temporal/src/calendars/calendar-resource.map",
+      "source_sha256": "5207fffbf1612bcb5a58bc02db60240b31eb7ae45d3af1d195cc545c9530854f",
+      "copied_sha256": "5207fffbf1612bcb5a58bc02db60240b31eb7ae45d3af1d195cc545c9530854f",
+      "selected_definitions": []
+    },
+    {
+      "path": "LICENSE",
+      "source_path": "LICENSE",
+      "source_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "copied_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "selected_definitions": []
+    }
+  ],
+  "copy_method": "Select this provider in the original conditional source, specialize private dispatch branches, retain reachable provider/helper definitions, and copy the transitive local headers. Original functions and data remain attributed to Common.",
+  "verification": {
+    "repository": "Calendar-World",
+    "compared_observations": 883,
+    "retained_fixtures": 84,
+    "exports": [
+      "infiltratr_temporal_calendar_provider_v1",
+      "infiltratr_temporal_resource_metadata_v1"
+    ],
+    "abi_identical": true,
+    "behaviour_identical": true
+  }
+}

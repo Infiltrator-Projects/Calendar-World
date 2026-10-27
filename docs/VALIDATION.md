@@ -1,37 +1,24 @@
-# World Calendar — validation requirements
+# World Calendar — copy validation
 
-**Evidence status:** No independent executable, standalone CI, installer or released artifact is established by these documents. All checkboxes are future gates, not claims of passing tests.
+## Completed checks
 
-## Qualification checklist
+- [x] Record Common 1.19.78 source revision `8d60662114e3052380f6f88ad3cacd9732ae7131` and original/copy file hashes.
+- [x] Copy the selected `world` provider and the supporting definitions and headers it needs; retain Common unchanged.
+- [x] Build the canonical `World Calendar.so` independently with strict C11 warnings treated as errors.
+- [x] Verify metadata, callback ABI, stable identity, canonical name and the two exported entry points.
+- [x] Match the original provider across **883** applicable callback observations, including invalid inputs and boundaries.
+- [x] Retain **84** focused baseline fixtures; run them with `make check`.
+- [x] Pass Common's existing module tests against the complete copied resource set: 6 calendar tests and 16 clock tests.
 
-- [ ] Establish exact original Common revision, licensed source provenance, direct and shared dependencies.
-- [ ] Keep the implementation limited to stable ID `world`; do not embed another independent resource's algorithm.
-- [ ] Produce the directly named portable shared object `World Calendar.so`.
-- [ ] Verify metadata version, name, ID, kind, loadability and executable ABI through Common.
-- [ ] Verify model-specific computation and historical-reference dates/times against evidence independent of self-round-tripping.
-- [ ] Reject malformed, out-of-range and unsupported inputs with bounded work and no caller-owned output mutation.
-- [ ] Verify bad/missing/different-kind resources cannot silently fall back or break other installed resources.
-- [ ] Test the actual installed package bytes through the native resource directory.
-- [ ] Verify clean installation, upgrade, removal and recovery without conflicting with the combined Common package.
-- [ ] Record reproducibility, package/hash, build environment and release commit.
-- [ ] Confirm consumer discovery in Calendar, Files and System Settings without embedding duplicate implementations.
+The comparison verifies that splitting and copying the code preserved the existing behaviour. Model and historical-reference claims remain limited to [MODEL.md](MODEL.md) and the original evidence; these are not newly independently proved by comparing an implementation with its origin.
 
-## Model-specific reference qualification
+## Remaining qualification
 
-Cross-check the defined World Calendar model and its day/year/representation boundaries against separately established test vectors.
+- [ ] Add independent historical/reference evidence beyond the preserved model audit where required.
+- [ ] Qualify other compiler, operating-system, runtime and architecture baselines.
+- [ ] Add and qualify standalone release CI if independent releases are requested.
+- [ ] Create and test an independent package/installer, including upgrade/removal and any coordinated package ownership transition.
+- [ ] Test actual installed consumer discovery through the native resource directory.
+- [ ] Publish only artifacts from an explicitly qualified release state.
 
-**Documented model:** World Calendar reform proposal with its own explicit intercalary days.
-
-**Fidelity boundary:** Not an adopted universal civil chronology.
-
-Also test period start/end, forward/backward navigation, localized output, extreme Julian-day values and consistency of supported-domain rejection across all operations.
-
-## Prior evidence versus independent release evidence
-
-The existing Common suite (`resources/temporal/tests/test-calendars.c`) supplies the starting contract, but a passing Common pack does not prove a standalone package or this repository's release. Attach specific commits, test runs, environments and artifacts before marking any item complete.
-
-- [Libraries/Common temporal sources](https://github.com/Infiltrator-Projects/Libraries/tree/main/resources/temporal)
-- [Current canonical build catalogue](https://github.com/Infiltrator-Projects/Libraries/blob/main/resources/temporal/Makefile)
-- [Calendar chronology and clock models](https://github.com/Infiltrator-Projects/Calendar/blob/main/docs/MODELS.md)
-- [Historical fidelity audit](https://github.com/Infiltrator-Projects/Libraries/blob/main/docs/TEMPORAL_HISTORICAL_FIDELITY.md)
-- [Temporal discovery and executable provider ABI](https://github.com/Infiltrator-Projects/Libraries/blob/main/docs/TEMPORAL_PROVIDERS.md)
+No Common files are removed or modified by this copy. See [source record](../SOURCE.md) and [machine-readable results](../VALIDATION-RESULTS.json) for exact evidence and host limitations.
