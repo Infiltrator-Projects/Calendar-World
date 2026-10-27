@@ -23,11 +23,16 @@ with tempfile.TemporaryDirectory(prefix="provider-payload-") as temporary:
     root = Path(temporary)
     subprocess.run(["dpkg-deb", "--extract", package, root], check=True)
     files = [p for p in root.rglob("*") if not p.is_dir()]
+    locales = ROOT / "i18n/LINGUAS"
+    translated_paths = set()
+    if locales.exists():
+        translated_paths = {Path("usr/share/locale") / language.strip() / "LC_MESSAGES" / (expected + ".mo")
+                            for language in locales.read_text().splitlines() if language.strip() and not language.strip().startswith("#")}
     assert sum(p.suffix == ".so" for p in files) == 1
     for file in files:
         relative = file.relative_to(root)
         assert not file.is_symlink()
-        assert relative == resource or relative.is_relative_to(documentation), relative
+        assert relative == resource or relative.is_relative_to(documentation) or relative in translated_paths, relative
         assert file.stat().st_mode & 0o777 == 0o644, relative
     library = root / resource
     info = (root / documentation / "BUILD-INFO").read_text()
@@ -45,4 +50,7 @@ with tempfile.TemporaryDirectory(prefix="provider-payload-") as temporary:
     env = dict(os.environ, LANGUAGE="en_US", LC_ALL="C.UTF-8")
     for check in ("check_provider.py", "check_accuracy.py"):
         subprocess.run([sys.executable, ROOT / "tests" / check, library], check=True, env=env)
+    if translated_paths:
+        assert all((root / relative).exists() for relative in translated_paths)
+        subprocess.run([sys.executable, ROOT / "tests/check_translations.py", library, root / "usr/share/locale"], check=True, env=env)
 print(f"{expected}: one qualified {profile} module, passive documentation, no installed helpers")

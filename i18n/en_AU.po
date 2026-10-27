@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Shannon Smith
+# This file is distributed under the same license as the Calendar package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Calendar 1.0.116\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-18 17:35+0800\n"
+"PO-Revision-Date: 2026-10-11 22:50+0000\n"
+"Last-Translator: Shannon Smith\n"
+"Language-Team: en_AU\n"
+"Language: en_AU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "January"
+msgstr "January"
+
+msgid "February"
+msgstr "February"
+
+msgid "March"
+msgstr "March"
+
+msgid "April"
+msgstr "April"
+
+msgid "May"
+msgstr "May"
+
+msgid "June"
+msgstr "June"
+
+msgid "July"
+msgstr "July"
+
+msgid "August"
+msgstr "August"
+
+msgid "September"
+msgstr "September"
+
+msgid "October"
+msgstr "October"
+
+msgid "November"
+msgstr "November"
+
+msgid "December"
+msgstr "December"
+
+msgid "Leapyear Day"
+msgstr "Leapyear Day"
+
+msgid "Worldsday"
+msgstr "Worldsday"
+
+#, c-format
+msgid "%d %s %lld %s"
+msgstr "%d %s %lld %s"
+
+#, c-format
+msgid "%d %s %lld"
+msgstr "%d %s %lld"

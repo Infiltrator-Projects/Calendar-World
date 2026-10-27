@@ -16,7 +16,7 @@ ifneq ($(filter glib-2.0,$(DEPENDENCIES)),)
 DEP_LIBS := $(shell $(PKG_CONFIG) --libs glib-2.0)
 endif
 CPPFLAGS += -Iinclude -Isrc -Isrc/support -Isrc/calendars -Isrc/calendars/engine -Isrc/clocks \
-    -include include/provider-config.h -DGETTEXT_PACKAGE=\"infiltrator-temporal-resources\" \
+    -include include/provider-config.h -DGETTEXT_PACKAGE=\"infiltrator-calendar-world\" \
     -DU_DISABLE_RENAMING=1 -DGLIB_VERSION_MIN_REQUIRED=GLIB_VERSION_2_74 \
     -DGLIB_VERSION_MAX_ALLOWED=GLIB_VERSION_2_74
 CFLAGS ?= -O2 -g

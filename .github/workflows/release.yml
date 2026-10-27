@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
       - name: Install build prerequisites
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends build-essential binutils pkg-config libglib2.0-dev libicu-dev python3
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends build-essential binutils pkg-config libglib2.0-dev libicu-dev gettext locales python3
       - name: Build and qualify the portable release and exact native installer
         shell: bash
         run: |

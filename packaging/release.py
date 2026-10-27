@@ -70,6 +70,13 @@ def epoch():
 
 def check_requirements():
     missing = [x for x in ("gcc", "make", "pkg-config", "dpkg", "dpkg-deb", "readelf", "strip") if not shutil.which(x)]
+    if (ROOT / "i18n/LINGUAS").exists() and not shutil.which("msgfmt"):
+        missing.append("msgfmt")
+    if (ROOT / "i18n/LINGUAS").exists():
+        available = subprocess.check_output(["locale", "-a"], text=True).splitlines()
+        has_utf8 = any(name.lower().replace("-", "").endswith(".utf8") and not name.lower().startswith("c.") for name in available)
+        if not has_utf8 and (not shutil.which("localedef") or not Path("/usr/share/i18n/locales/en_US").exists()):
+            missing.append("UTF-8 locale data (locales)")
     dependencies = MANIFEST["build_dependencies"]
     if not missing and dependencies:
         if subprocess.run(["pkg-config", "--exists", *dependencies]).returncode:
@@ -87,6 +94,8 @@ def ensure_requirements(provision):
         command = ["sudo", "--", *command]
     run([*command, "update"])
     packages = ["build-essential", "binutils", "pkg-config", "python3"]
+    if (ROOT / "i18n/LINGUAS").exists():
+        packages += ["gettext", "locales"]
     if "glib-2.0" in MANIFEST["build_dependencies"]:
         packages.append("libglib2.0-dev")
     if "icu-i18n" in MANIFEST["build_dependencies"]:
@@ -183,6 +192,17 @@ def build_deb(profile, output, jobs):
                 f"Resource: /{RESOURCE}\nSHA256: {hashlib.sha256(target.read_bytes()).hexdigest()}\n"
                 "Checks: copy regression and model accuracy passed on final stripped module\n")
         (documentation / "BUILD-INFO").write_text(info)
+        if (ROOT / "i18n/LINGUAS").exists():
+            for language in (ROOT / "i18n/LINGUAS").read_text().splitlines():
+                language = language.strip()
+                if not language or language.startswith("#"):
+                    continue
+                if not re.fullmatch(r"[A-Za-z0-9_@.-]+", language):
+                    raise ValueError("Invalid translation language")
+                destination_mo = stage / "usr/share/locale" / language / "LC_MESSAGES" / (PACKAGE + ".mo")
+                destination_mo.parent.mkdir(parents=True, exist_ok=True)
+                run(["msgfmt", "--check", "-o", destination_mo, ROOT / "i18n" / (language + ".po")])
+            run([sys.executable, "tests/check_translations.py", target, stage / "usr/share/locale"])
         control = stage / "DEBIAN"
         control.mkdir()
         (control / "control").write_text(
