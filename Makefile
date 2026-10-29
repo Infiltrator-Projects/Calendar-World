@@ -13,6 +13,15 @@ COMMON_BUILD_DIR := $(abspath $(BUILD_DIR))/common
 COMMON_ARCHIVE := $(COMMON_BUILD_DIR)/libinfiltratr-common.a
 DEPENDENCIES := glib-2.0
 SOURCES := $(shell find src -type f -name '*.c' | LC_ALL=C sort)
+# Include provider-owned locale catalogues in the .so.
+ifneq ($(wildcard i18n/LINGUAS),)
+EMBEDDED_TRANSLATIONS := $(BUILD_DIR)/embedded-translations.c
+SOURCES += $(EMBEDDED_TRANSLATIONS)
+CPPFLAGS += -Dg_dgettext=infiltratr_embedded_dgettext
+$(EMBEDDED_TRANSLATIONS): packaging/embed_translations.py i18n/LINGUAS $(wildcard i18n/*.po)
+	@mkdir -p "$(BUILD_DIR)"
+	$(PYTHON) packaging/embed_translations.py "$@"
+endif
 TARGET := $(BUILD_DIR)/$(RESOURCE_NAME).so
 ifneq ($(strip $(DEPENDENCIES)),)
 DEP_CFLAGS := $(shell $(PKG_CONFIG) --cflags $(DEPENDENCIES))
@@ -41,7 +50,7 @@ $(COMMON_ARCHIVE): common-check
 	@mkdir -p "$(COMMON_BUILD_DIR)"
 	$(MAKE) -C common CC="$(CC)" BUILD_DIR="$(COMMON_BUILD_DIR)" CFLAGS="$(CFLAGS) -Wno-missing-profile" all
 .PHONY: all check audit-authorities clean
-all: $(COMMON_ARCHIVE)
+all: $(COMMON_ARCHIVE) $(EMBEDDED_TRANSLATIONS)
 	@mkdir -p "$(BUILD_DIR)"
 	$(CC) $(CPPFLAGS) $(CFLAGS) $(DEP_CFLAGS) -shared $(SOURCES) $(COMMON_ARCHIVE) \
 	    -Wl,--version-script=exports.map -Wl,-z,defs -Wl,--gc-sections \

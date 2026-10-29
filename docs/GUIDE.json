@@ -1,0 +1,35 @@
+{
+  "title": "World Calendar",
+  "intro": "A proposed permanent world calendar in which each quarter has the same length and ordinary dates repeat their weekday pattern each year.",
+  "summary": "Four quarters of 91 days each, plus a special World Day and an additional leap-year day outside the regular week.",
+  "origin": "The World Calendar was proposed as a twentieth-century calendar reform for simpler recurring business and civic schedules.",
+  "ring_label": "4",
+  "ring_caption": "QUARTERS",
+  "diagram_title": "FOUR MATCHING QUARTERS",
+  "structure": "Every quarter has 31 days in its first month followed by two 30-day months, totalling 91 days or exactly 13 weeks.",
+  "diagram_caption": "4 × 91 DAYS + SPECIAL INTERCALARY DAYS",
+  "sections": [
+    {
+      "name": "January–March",
+      "days": "91"
+    },
+    {
+      "name": "April–June",
+      "days": "91"
+    },
+    {
+      "name": "July–September",
+      "days": "91"
+    },
+    {
+      "name": "October–December",
+      "days": "91",
+      "special": true
+    }
+  ],
+  "pattern_note": "World Day is added at year-end and a leap-year day follows June; these are special days outside the standard repeating weekday pattern.",
+  "history": "Reformers argued that identical quarters would make accounting, business planning and annual comparisons easier. Critics objected to interrupting the continuous seven-day week.",
+  "example": "The first month in every quarter has 31 days. The next two have 30 each, giving every quarter a fixed 13-week pattern.",
+  "limits": "The World Calendar is a proposal, not a universally adopted civil calendar. Its intercalary days and weekday treatment should not be mistaken for Gregorian rules.",
+  "source": "https://github.com/Infiltrator-Projects/Calendar-World"
+}
