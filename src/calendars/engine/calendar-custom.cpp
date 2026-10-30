@@ -121,7 +121,6 @@ format_world(const CalendarFields *fields,
  */
 /* One strongly typed native C++20 chronology descriptor. */
 static const CustomCalendarProvider local_provider = {
-    [CALENDAR_CALENDAR_MODE_WORLD] = {
         calendar_world_fields_from_jdn,
         calendar_world_fields_to_jdn,
         world_month_length, format_world,
@@ -130,7 +129,7 @@ static const CustomCalendarProvider local_provider = {
 };
 static const CustomCalendarProvider *custom_provider(CalendarMode mode)
 {
-    return mode == CALENDAR_CALENDAR_MODE_COUNT ? &local_provider : nullptr;
+    return mode == CALENDAR_CALENDAR_MODE_WORLD ? &local_provider : nullptr;
 }
 
 void
