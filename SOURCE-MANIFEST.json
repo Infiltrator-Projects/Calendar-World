@@ -231,10 +231,9 @@
       "selected_definitions": []
     },
     {
-      "path": "src/provider.c",
+      "path": "src/provider.cpp",
       "source_path": "resources/temporal/src/calendars/native-calendar.c",
       "source_sha256": "51c2e0ed1cca19eafd3c35652bd1ebb24716f253f4c65041280a3a32f06ab3f9",
-      "copied_sha256": "5aea2107fd78692b6b9a685fb23480d631cf54d62a7553e883d955df34023ba1",
       "selected_definitions": [
         "RESOURCE_EXPORT",
         "RESOURCE_OPERATIONS",
@@ -254,7 +253,8 @@
         "provider",
         "start",
         "years"
-      ]
+      ],
+      "ported_to": "C++20"
     },
     {
       "path": "src/support/calendar-types.h",
@@ -347,7 +347,7 @@
       "selected_definitions": []
     }
   ],
-  "copy_method": "Original Common copied source is provenance only; build compiles authoritative Common 1.19.80.",
+  "copy_method": "Historical C chronology retained with native C++20 public provider and C++ gettext embeddings, linked to pinned authoritative Common.",
   "verification": {
     "repository": "Calendar-World",
     "compared_observations": 883,
@@ -362,7 +362,7 @@
   "common_dependency": {
     "type": "git-submodule",
     "path": "common",
-    "revision": "dc4aac326964ca4400b6e21851d16eea674040c8",
+    "revision": "ac1822fcad39c5951b7676fe0c372d4f9e829649",
     "version": "1.19.80",
     "linkage": "static"
   }

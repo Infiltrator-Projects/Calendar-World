@@ -1,5 +1,7 @@
 # World Calendar
 
+**Implementation:** Native C++20 resource provider with C chronology algorithms, native C++ embedded translations and Python-free build/release tooling. Installs only .so and illustrated PDF.
+
 **InfiltratorOS calendar resource** · **Stable ID:** `world` · **Module:** `World Calendar.so`
 
 World Calendar reform proposal with its own explicit intercalary days.
