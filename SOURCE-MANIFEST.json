@@ -128,10 +128,9 @@
       "selected_definitions": []
     },
     {
-      "path": "src/calendars/engine/calendar-custom.c",
+      "path": "src/calendars/engine/calendar-custom.cpp",
       "source_path": "resources/temporal/src/calendars/engine/calendar-custom.c",
       "source_sha256": "ae44cf27dde6b67f3dd298d46dd11854d748d618ae2bcccdfd97776e9b7e1885",
-      "copied_sha256": "e3f3b9d265e7a294835817af710e2148308f4e54e6fe3994d132feaab1820719",
       "selected_definitions": [
         "calendar_custom_add_months",
         "calendar_custom_add_years",
@@ -147,7 +146,8 @@
         "format_world",
         "positive_modulo",
         "world_month_length"
-      ]
+      ],
+      "ported_to": "C++20"
     },
     {
       "path": "src/calendars/engine/calendar-custom.h",
@@ -347,7 +347,7 @@
       "selected_definitions": []
     }
   ],
-  "copy_method": "Historical C chronology retained with native C++20 public provider and C++ gettext embeddings, linked to pinned authoritative Common.",
+  "copy_method": "C++20 calendar arithmetic/descriptor and C++20 ABI module use pinned Common. Other validated chronology helpers remain in C.",
   "verification": {
     "repository": "Calendar-World",
     "compared_observations": 883,
