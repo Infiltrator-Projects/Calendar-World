@@ -16,8 +16,9 @@ C_SOURCES := $(shell find src -type f -name '*.c' | LC_ALL=C sort)
 CPP_SOURCES := $(shell find src -type f -name '*.cpp' | LC_ALL=C sort)
 C_OBJECTS := $(patsubst src/%.c,$(BUILD_DIR)/native-c/%.o,$(C_SOURCES))
 CPP_OBJECTS := $(patsubst src/%.cpp,$(BUILD_DIR)/native-cxx/%.o,$(CPP_SOURCES))
-EMBEDDED_SOURCE := $(BUILD_DIR)/embedded-translations.cpp
+EMBEDDED_SOURCE := $(BUILD_DIR)/embedded-translations.c
 EMBEDDED_OBJECT := $(BUILD_DIR)/embedded-translations.o
+MO_FILES := $(patsubst i18n/%.po,$(BUILD_DIR)/mo/%.mo,$(wildcard i18n/*.po))
 TARGET := $(BUILD_DIR)/$(RESOURCE_NAME).so
 DEP_CFLAGS := $(shell $(PKG_CONFIG) --cflags $(DEPENDENCIES))
 DEP_LIBS := $(shell $(PKG_CONFIG) --libs $(DEPENDENCIES))
@@ -51,12 +52,15 @@ $(BUILD_DIR)/native-c/%.o: src/%.c
 $(BUILD_DIR)/native-cxx/%.o: src/%.cpp
 	@mkdir -p "$(dir $@)"
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEP_CFLAGS) -c "$<" -o "$@"
-$(EMBEDDED_SOURCE): common/calendar-tools/embed_translations.cpp i18n/LINGUAS $(wildcard i18n/*.po)
+$(BUILD_DIR)/mo/%.mo: i18n/%.po
+	@mkdir -p "$(@D)"
+	msgfmt --check -o "$@" "$<"
+$(EMBEDDED_SOURCE): common/calendar-tools/embed_translations.cpp i18n/LINGUAS $(MO_FILES)
 	@mkdir -p "$(BUILD_DIR)"
 	$(CXX) -std=c++20 -O2 -Wall -Wextra -Wpedantic -Werror common/calendar-tools/embed_translations.cpp -o "$(BUILD_DIR)/embed-translations"
-	"$(BUILD_DIR)/embed-translations" i18n/LINGUAS "$@"
+	"$(BUILD_DIR)/embed-translations" i18n/LINGUAS "$(BUILD_DIR)/mo" "$@"
 $(EMBEDDED_OBJECT): $(EMBEDDED_SOURCE)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(DEP_CFLAGS) -c "$<" -o "$@"
+	$(CC) $(CPPFLAGS) $(CFLAGS) $(DEP_CFLAGS) -c "$<" -o "$@"
 all: $(COMMON_ARCHIVE) $(C_OBJECTS) $(CPP_OBJECTS) $(EMBEDDED_OBJECT)
 	@mkdir -p "$(BUILD_DIR)"
 	$(CXX) $(CXXFLAGS) -shared $(C_OBJECTS) $(CPP_OBJECTS) $(EMBEDDED_OBJECT) $(COMMON_ARCHIVE) \
