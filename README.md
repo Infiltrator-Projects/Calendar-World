@@ -52,4 +52,4 @@ Translations use the provider-owned gettext domain `infiltrator-calendar-world`.
 
 ## Illustrated user guide
 
-The installed package contains exactly two provider-owned files: `World Calendar.so` and `World Calendar.pdf`. Developer documentation stays in GitHub, and translations are embedded in the library. Native build attestation is stored in Debian control metadata.
+The installed package contains exactly two provider-owned files: `World Calendar.so` and `Calendar-World.pdf`. Developer documentation stays in GitHub, and translations are embedded in the library. Native build attestation is stored in Debian control metadata.
