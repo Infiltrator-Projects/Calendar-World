@@ -26,7 +26,7 @@ jobs:
           set -euo pipefail
           if find . -name '*.py' -not -path './common/*' | grep -q .; then echo 'Python code prohibited in clocks' >&2; exit 1; fi
           bash common/calendar-tools/build.sh release
-          LANGUAGE=fr LC_ALL=C.UTF-8 build/provider-check "$(realpath 'build/package/World Calendar.so')" world 'World Calendar' format_contains 2451545 2 Janvier
+          LANGUAGE=fr LC_ALL=C.UTF-8 build/provider-check "$(realpath 'build/package/World Calendar.so')" world 'World Calendar' calendar_format 2451545 2 512 true 'Janvier' 7
           deb=(dist/*.deb)
           bash common/calendar-tools/check-package.sh "${deb[0]}" portable
           sudo bash common/calendar-tools/check-upgrade.sh "${deb[0]}"
