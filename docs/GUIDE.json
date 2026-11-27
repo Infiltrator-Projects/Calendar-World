@@ -1,13 +1,7 @@
 {
   "title": "World Calendar",
-  "intro": "A proposed permanent world calendar in which each quarter has the same length and ordinary dates repeat their weekday pattern each year.",
-  "summary": "Four quarters of 91 days each, plus a special World Day and an additional leap-year day outside the regular week.",
-  "origin": "The World Calendar was proposed as a twentieth-century calendar reform for simpler recurring business and civic schedules.",
-  "ring_label": "4",
-  "ring_caption": "QUARTERS",
-  "diagram_title": "FOUR MATCHING QUARTERS",
-  "structure": "Every quarter has 31 days in its first month followed by two 30-day months, totalling 91 days or exactly 13 weeks.",
-  "diagram_caption": "4 × 91 DAYS + SPECIAL INTERCALARY DAYS",
+  "intro": "The World Calendar is a proposed reform of Gregorian civil dating with four identical quarterly structures.",
+  "structure": "Each quarter contains three months of 31, 30 and 30 days, making 91 ordinary days or thirteen complete weeks. Four quarters provide 364 ordinary days. World Day follows the final quarter; a leap day follows June in Gregorian leap years. The proposal excludes these intercalary days from the ordinary weekly cycle.",
   "sections": [
     {
       "name": "January–March",
@@ -27,9 +21,12 @@
       "special": true
     }
   ],
-  "pattern_note": "World Day is added at year-end and a leap-year day follows June; these are special days outside the standard repeating weekday pattern.",
-  "history": "Reformers argued that identical quarters would make accounting, business planning and annual comparisons easier. Critics objected to interrupting the continuous seven-day week.",
-  "example": "The first month in every quarter has 31 days. The next two have 30 each, giving every quarter a fixed 13-week pattern.",
-  "limits": "The World Calendar is a proposal, not a universally adopted civil calendar. Its intercalary days and weekday treatment should not be mistaken for Gregorian rules.",
-  "source": "https://github.com/Infiltrator-Projects/Calendar-World"
+  "model": "The provider represents the reform proposal with explicit intercalary days and Gregorian year alignment. Ordinary month dates and special days must be distinguished in conversion and navigation.",
+  "example": "January, April, July and October each begin a 31-day month; the following two months in each quarter have 30 days. The quarterly pattern repeats four times before World Day.",
+  "history": "Reformers proposed the equal-quarter calendar to simplify annual scheduling and accounting. Its interruption of the continuous seven-day week was controversial, and it was not adopted as a universal civil chronology.",
+  "limits": "This resource models a proposed calendar, not a record of widespread historical adoption. Special day conventions differ from Gregorian date and weekday rules.",
+  "sources": [
+    "https://github.com/Infiltrator-Projects/Calendar-World",
+    "Model evidence: https://github.com/Infiltrator-Projects/Calendar-World/blob/main/docs/MODEL.md"
+  ]
 }
